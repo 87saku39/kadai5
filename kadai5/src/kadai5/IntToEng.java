@@ -29,24 +29,30 @@ public class IntToEng {
     
     	if(n<20){
     		number=new StringBuffer(eNum1[n]);
-    	}else{
+    	}else if(20 <= n && n < 100){
     		
     	final String[] eNum10={
     			"twenty", "thirty", "forty", "fifty", "sixty",
     			"seventy", "eighty", "ninety"};
     	
-    	String n1=n.toString();
-    	number=new StringBuffer(eNum10[n.charAt(0)]+eNum1[n.charAt(1)]);
+    	//String n1=String.valueOf(n);
+    	number=new StringBuffer(eNum10[(n/10)-2] + " " + eNum1[n%10]);
     	
-    	
+    	}else if(100 <= n && n < 1000){
+    		String h = "hundred";
+    		String[] eNum100={
+    				"one", "two", "three", "four",
+        			"five", "six", "seven", "eight", "nine"
+    		};
     		
+    		number=new StringBuffer(eNum100[(n/100)-1] + eNum10[n/10)%10] + " " + eNum1[n%10]);
     	
-    
-      	
-
+    	
+    	}
+    	
         return number.toString();
 
-    }
 
+}
 }
 
