@@ -7,6 +7,8 @@ public class IntToEng {
     private static Scanner sc;
 
 	// メインメソッド
+    
+    
 
     public static void main(String[] args) {
         sc = new Scanner(System.in);
